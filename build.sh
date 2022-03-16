@@ -32,7 +32,7 @@ fi
 # Download the main token handler API
 #
 rm -rf tokenhandlerapi
-git clone https://github.com/gary-archer/oauth.tokenhandlerapi tokenhandlerapi
+git clone https://github.com/gary-archer/oauth.tokenhandler.docker tokenhandlerapi
 if [ $? -ne 0 ]; then
     echo 'Problem encountered downloading the Token Handler API'
     exit 1

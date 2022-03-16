@@ -1,6 +1,6 @@
 # Local Token Handler Deployment
 
-The [Final SPA](https://github.com/gary-archer/oauth.websample.final) implements its OpenID Connect security using a [Token Handler](https://github.com/gary-archer/oauth.tokenhandlerapi).\
+The [Final SPA](https://github.com/gary-archer/oauth.websample.final) implements its OpenID Connect security using a [Token Handler](https://github.com/gary-archer/oauth.tokenhandler.docker).\
 This design pattern requires extra components to support the SPA.
 
 ## Development Setup
