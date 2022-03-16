@@ -10,8 +10,9 @@ This ensures that SameSite cookies issued by the token handler work properly in 
 
 | Component | URL |
 | --------- | --- |
-| SPA | https://web.mycompany.com/spa |
-| Token Handler | https://api.mycompany.com/tokenhandler |
+| SPA | https://web.authsamples-dev.com/spa |
+| OAuth Agent | https://localtokenhandler.authsamples-dev.com/oauth-agent |
+| API Public URL | https://localtokenhandler.authsamples-dev.com/api |
 
 ## Build
 
@@ -19,7 +20,5 @@ The build script is called by the SPA's `build.sh` script to ensure that the tok
 
 ## Deploy
 
-The deploy script is called when the SPA's `run.sh` script is executed.\
-The result is that the Token Handler API and an API Gateway with an OAuth Proxy run in Docker:
-
-![Supporting Components](/doc/supporting-components.png)
+The deploy script is called when the SPA's `deploy.sh` script is executed.\
+The result is that the OAuth Agent API and an API Gateway with an OAuth Proxy run in Docker.

@@ -8,20 +8,7 @@
 # Set the current folder if this script is called from another script
 #
 cd "$(dirname "${BASH_SOURCE[0]}")"
-LOCALAPI=false
-
-#
-# Configure details of the APIs the local PC token handler points to
-#
-if [ "$LOCALAPI" == 'true' ]; then
-  
-  # Use a local downstream API
-  BUSINESS_API_URL='https://api.mycompany.com:445/api'
-else
-  
-  # Use a cloud downstram API
-  BUSINESS_API_URL='https://api.authsamples.com/api'
-fi
+BUSINESS_API_URL='https://api.mycompany.com:445/api'
 
 #
 # Do some string manipulation to update kong.yml with the runtime value for the Business API URL

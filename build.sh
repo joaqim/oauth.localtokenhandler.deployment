@@ -22,22 +22,22 @@ cd ..
 # Download the Curity OAuth proxy plugin
 #
 rm -rf oauth-proxy-plugin
-git clone https://github.com/curityio/kong-bff-plugin ./oauth-proxy-plugin
+git clone https://github.com/curityio/nginx-lua-oauth-proxy-plugin ./oauth-proxy-plugin
 if [ $? -ne 0 ]; then
     echo 'Problem encountered downloading the Curity OAuth proxy plugin'
     exit 1
 fi
 
 #
-# Download the main token handler API
+# Download the main OAuth Agent API
 #
-rm -rf tokenhandlerapi
-git clone https://github.com/gary-archer/oauth.tokenhandler.docker tokenhandlerapi
+rm -rf oauth-agent-api
+git clone https://github.com/gary-archer/oauth.tokenhandler.docker oauth-agent-api
 if [ $? -ne 0 ]; then
     echo 'Problem encountered downloading the Token Handler API'
     exit 1
 fi
-cd tokenhandlerapi
+cd oauth-agent-api
 
 #
 # Install API dependencies

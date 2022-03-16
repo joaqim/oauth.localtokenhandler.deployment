@@ -36,9 +36,9 @@ services:
   #
   # OAuth calls and issuing of secure cookies for the SPA are handled by this utility API
   #
-  tokenhandlerapi:
-    image: tokenhandler:v1
-    hostname: api-internal.mycompany.com
+  oauthagentapi:
+    image: oauthagentapi:v1
+    hostname: oauthagentapi-internal.mycompany.com
     volumes:
-      - ./tokenhandlerapiconfig/api.config.json:/usr/api/api.config.json
+      - ./oauthagentapiconfig/api.config.json:/usr/api/api.config.json
       - ./certs/mycompany.ssl.p12:/usr/api/certs/mycompany.ssl.p12

@@ -1,6 +1,6 @@
 .DS_Store
 certs
-tokenhandlerapi
+oauth-agent-api
 oauth-proxy-plugin
 node_modules
 trusted.ca.pem
