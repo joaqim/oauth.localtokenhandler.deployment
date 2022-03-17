@@ -5,4 +5,3 @@ oauth-agent
 oauth-proxy-plugin
 node_modules
 trusted.ca.pem
-kong.yml

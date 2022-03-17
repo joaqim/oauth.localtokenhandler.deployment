@@ -40,5 +40,5 @@ services:
     image: oauthagent:v1
     hostname: oauthagent-internal.mycompany.com
     volumes:
-      - ./oauthagentapiconfig/api.config.json:/usr/api/api.config.json
+      - ./oauth-agent-config/api.config.json:/usr/api/api.config.json
       - ./certs/authsamples-dev.ssl.p12:/usr/api/certs/authsamples-dev.ssl.p12

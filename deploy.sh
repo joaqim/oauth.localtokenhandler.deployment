@@ -12,7 +12,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 #
 # Run the Docker compose network
 #
-docker compose --project-name localtokenhandler up --force-recreate
+docker compose --project-name localtokenhandler up --detach --force-recreate --remove-orphans
 if [ $? -ne 0 ]; then
   echo "Problem encountered starting Docker components"
   exit 1
