@@ -12,11 +12,11 @@ services:
   # The gateway then calls the OAuth Agent API, which calls the public Authorization Server
   #
 - name: oauth-agent
-  url: https://oauth-agent.mycompany.com:8000
+  url: https://oauthagent-internal.mycompany.com:8000
   routes:
-  - name: tokenhandler-api-route
+  - name: oauth-agent-api-route
     paths:
-    - /tokenhandler
+    - /oauth-agent
 
   #
   # The SPA calls the gateway URL https://localtokenhandler.authsamples-dev.com:444/api to make API calls
