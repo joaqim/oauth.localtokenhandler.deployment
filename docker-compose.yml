@@ -2,13 +2,13 @@ version: '3.8'
 services:
 
   #
-  # OAuth and API calls from the SPA are routed via the reverse proxy at the https://api.mycompany.com:444 base URL
+  # OAuth and API calls from the SPA are routed via the reverse proxy
   #
   reverseproxy:
     image: kong:2.5.0-alpine
-    hostname: reverseproxy-internal.mycompany.com
+    hostname: reverseproxy-internal.authsamples-dev.com
     extra_hosts:
-     - api.mycompany.com:host-gateway
+     - api.authsamples-dev.com:host-gateway
     ports:
       - 444:8000
     volumes:
@@ -38,7 +38,7 @@ services:
   #
   oauthagentapi:
     image: oauthagent:v1
-    hostname: oauthagent-internal.mycompany.com
+    hostname: oauthagent-internal.authsamples-dev.com
     volumes:
       - ./oauth-agent-config/api.config.json:/usr/api/api.config.json
       - ./certs/authsamples-dev.ssl.p12:/usr/api/certs/authsamples-dev.ssl.p12

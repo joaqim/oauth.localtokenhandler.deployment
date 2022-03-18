@@ -12,7 +12,7 @@ services:
   # The gateway then calls the OAuth Agent API, which calls the public Authorization Server
   #
 - name: oauth-agent
-  url: https://oauthagent-internal.mycompany.com:8000
+  url: https://oauthagent-internal.authsamples-dev.com:8000
   routes:
   - name: oauth-agent-api-route
     paths:
@@ -23,7 +23,7 @@ services:
   # The gateway then uses a plugin to decrypt secure cookies, then calls the public API with the access token
   #
 - name: sample-api
-  url: https://api.mycompany.com:445/api
+  url: https://api.authsamples-dev.com:445/api
   routes:
   - name: sample-api-route
     paths:
