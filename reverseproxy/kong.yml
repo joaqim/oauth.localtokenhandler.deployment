@@ -12,7 +12,7 @@ services:
   # The gateway then calls the OAuth Agent API, which calls the public Authorization Server
   #
 - name: oauth-agent
-  url: https://oauthagent-internal.authsamples-dev.com:8000
+  url: https://oauthagent-internal.authsamples-dev.com:8000/oauth-agent
   routes:
   - name: oauth-agent-api-route
     paths:
