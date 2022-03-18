@@ -36,7 +36,7 @@ services:
   #
   # OAuth calls and issuing of secure cookies for the SPA are handled by this utility API
   #
-  oauthagentapi:
+  oauthagent:
     image: oauthagent:v1
     hostname: oauthagent-internal.authsamples-dev.com
     volumes:
