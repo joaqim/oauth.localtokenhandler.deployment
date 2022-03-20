@@ -34,7 +34,7 @@ fi
 rm -rf oauth-agent
 git clone https://github.com/gary-archer/oauth.tokenhandler.docker oauth-agent
 if [ $? -ne 0 ]; then
-    echo 'Problem encountered downloading the Token Handler API'
+    echo 'Problem encountered downloading the OAuth Agent'
     exit 1
 fi
 cd oauth-agent
