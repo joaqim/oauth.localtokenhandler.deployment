@@ -16,7 +16,6 @@ services:
       - ./oauth-proxy-plugin/plugin/plugin.lua:/usr/local/share/lua/5.1/kong/plugins/oauth-proxy/access.lua
       - ./oauth-proxy-plugin/plugin/handler.lua:/usr/local/share/lua/5.1/kong/plugins/oauth-proxy/handler.lua
       - ./oauth-proxy-plugin/plugin/schema.lua:/usr/local/share/lua/5.1/kong/plugins/oauth-proxy/schema.lua
-      - ./oauth-proxy-plugin/plugin/kong-oauth-proxy-1.0.0-1.rockspec:/usr/local/share/lua/5.1/kong/plugins/oauth-proxy/oauth-proxy-1.0.0-1.rockspec
       - ./certs/authsamples-dev.ssl.pem:/usr/local/share/certs/authsamples-dev.ssl.pem
       - ./certs/authsamples-dev.ssl.key:/usr/local/share/certs/authsamples-dev.ssl.key
       - ./certs/authsamples-dev.ca.pem:/usr/local/share/certs/authsamples-dev.ca.pem
