@@ -6,9 +6,9 @@ services:
   #
   reverseproxy:
     image: kong:2.5.0-alpine
-    hostname: reverseproxy-internal.authsamples-dev.com
+    hostname: reverseproxy-internal.joaqim-dev.com
     extra_hosts:
-     - api.authsamples-dev.com:host-gateway
+     - api.joaqim-dev.com:host-gateway
     ports:
       - 444:8000
     volumes:
@@ -16,16 +16,16 @@ services:
       - ./oauth-proxy-plugin/plugin/plugin.lua:/usr/local/share/lua/5.1/kong/plugins/oauth-proxy/access.lua
       - ./oauth-proxy-plugin/plugin/handler.lua:/usr/local/share/lua/5.1/kong/plugins/oauth-proxy/handler.lua
       - ./oauth-proxy-plugin/plugin/schema.lua:/usr/local/share/lua/5.1/kong/plugins/oauth-proxy/schema.lua
-      - ./certs/authsamples-dev.ssl.pem:/usr/local/share/certs/authsamples-dev.ssl.pem
-      - ./certs/authsamples-dev.ssl.key:/usr/local/share/certs/authsamples-dev.ssl.key
-      - ./certs/authsamples-dev.ca.pem:/usr/local/share/certs/authsamples-dev.ca.pem
+      - ./certs/joaqim-dev.ssl.pem:/usr/local/share/certs/joaqim-dev.ssl.pem
+      - ./certs/joaqim-dev.ssl.key:/usr/local/share/certs/joaqim-dev.ssl.key
+      - ./certs/joaqim-dev.ca.pem:/usr/local/share/certs/joaqim-dev.ca.pem
     environment:
       KONG_DATABASE: 'off'
       KONG_DECLARATIVE_CONFIG: '/usr/local/kong/declarative/kong.yml'
       KONG_PROXY_LISTEN: '0.0.0.0:8000 ssl'
-      KONG_SSL_CERT: '/usr/local/share/certs/authsamples-dev.ssl.pem'
-      KONG_SSL_CERT_KEY: './usr/local/share/certs/authsamples-dev.ssl.key'
-      KONG_LUA_SSL_TRUSTED_CERTIFICATE: './usr/local/share/certs/authsamples-dev.ca.pem'
+      KONG_SSL_CERT: '/usr/local/share/certs/joaqim-dev.ssl.pem'
+      KONG_SSL_CERT_KEY: './usr/local/share/certs/joaqim-dev.ssl.key'
+      KONG_LUA_SSL_TRUSTED_CERTIFICATE: './usr/local/share/certs/joaqim-dev.ca.pem'
       KONG_LOG_LEVEL: 'info'
       KONG_PLUGINS: 'bundled,oauth-proxy'
       KONG_NGINX_PROXY_PROXY_BUFFERS: '16 64k'
@@ -37,14 +37,14 @@ services:
   #
   oauthagent:
     image: oauthagent:v1
-    hostname: oauthagent-internal.authsamples-dev.com
+    hostname: oauthagent-internal.joaqim-dev.com
     volumes:
       - ./oauth-agent-config/api.config.json:/usr/api/api.config.json
-      - ./certs/authsamples-dev.ssl.p12:/usr/api/certs/authsamples-dev.ssl.p12
+      - ./certs/joaqim-dev.ssl.p12:/usr/api/certs/joaqim-dev.ssl.p12
 
   #
   # Also deploy a troubleshooting container from which we can run curl requests to other containers
   #
   util:
     image: wbitt/network-multitool
-    hostname: util-internal.authsamples-dev.com
+    hostname: util-internal.joaqim-dev.com

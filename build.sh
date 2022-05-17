@@ -10,13 +10,13 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 # Download SSL certificates used by the OAuth Agent and OAuth Proxy
 #
 rm -rf tmp
-git clone https://github.com/gary-archer/oauth.developmentcertificates ./tmp
+git clone https://github.com/joaqim/oauth.developmentcertificates ./tmp
 if [ $? -ne 0 ]; then
     echo 'Problem encountered downloading API certificates'
     exit 1
 fi
 rm -rf certs
-mv ./tmp/authsamples-dev ./certs
+mv ./tmp/joaqim-dev ./certs
 
 #
 # Download the Curity OAuth proxy plugin
@@ -46,7 +46,7 @@ cd oauth-agent
 #
 echo $TOKEN_HANDLER_CA_CERTS
 if [[ -z "$TOKEN_HANDLER_CA_CERTS" ]]; then
-  cp ../tmp/mycompany.ca.pem ./trusted.ca.pem
+  cp ../tmp/mycompany/mycompany.ca.pem ./trusted.ca.pem
 else
   cp $TOKEN_HANDLER_CA_CERTS ./trusted.ca.pem
 fi
